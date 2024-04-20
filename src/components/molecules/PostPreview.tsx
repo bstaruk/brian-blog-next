@@ -17,7 +17,11 @@ const PostPreview = ({ className, post }: PostPreviewProps): JSX.Element => {
     <article className={classNames('flex flex-col', className)}>
       <Text className="mb-1" variant="h3" tagName="h3" content={post.title} />
 
-      <Text className="font-light text-gray-500 mb-2" tagName="div" variant="sm">
+      <Text
+        className="font-light text-gray-500 mb-2"
+        tagName="div"
+        variant="sm"
+      >
         <DateTime dateTime={post.date} />
       </Text>
 

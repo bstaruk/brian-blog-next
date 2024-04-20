@@ -11,7 +11,9 @@ const Page = ({ children, className, title }: PageProps): JSX.Element => {
   return (
     <>
       <GlobalHeader {...{ title }} />
-      <Wrapper tagName="main" {...{ className }}>{children}</Wrapper>
+      <Wrapper tagName="main" {...{ className }}>
+        {children}
+      </Wrapper>
     </>
   );
 };
