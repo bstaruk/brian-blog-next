@@ -4,7 +4,7 @@ import PostPreview from '@/components/molecules/PostPreview';
 import SearchForm from '@/components/molecules/SearchForm';
 import Page from '@/components/organisms/Page';
 
-export default async function Search({
+export default async function Posts({
   searchParams,
 }: {
   searchParams?: {
@@ -15,7 +15,7 @@ export default async function Search({
   const allPosts = getAllPosts({ query });
 
   return (
-    <Page title="Search Posts" className="flex flex-col gap-8">
+    <Page title="Posts" className="flex flex-col gap-8">
       <SearchForm />
 
       {allPosts.map((post, postIndex) => (
@@ -26,7 +26,7 @@ export default async function Search({
 }
 
 export function generateMetadata(): Metadata {
-  const title = `Search Posts | brian.staruk.net`;
+  const title = `Posts | brian.staruk.net`;
 
   return {
     title,

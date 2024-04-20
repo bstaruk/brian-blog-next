@@ -31,7 +31,7 @@ const SearchForm = ({
         Search
       </label>
       <input
-        className="text--body block w-full rounded border border-gray-400 py-2 px-4 placeholder:text-gray-500 focus:ring-red-500 focus:border-red-500"
+        className="text--body block w-full rounded border bg-eggshell-400 text-eggplant-700 border-eggplant-200 py-2 px-4 placeholder:text-eggplant-200 focus:ring-eggplant-700 focus:border-eggplant-700"
         placeholder={placeholder}
         onChange={(e) => {
           handleSearch(e.target.value);

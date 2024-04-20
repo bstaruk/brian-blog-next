@@ -3,5 +3,5 @@
 }
 
 body {
-  @apply font-sans py-4 md:py-6 lg:py-8;
+  @apply bg-eggshell-400 text-eggplant-700 font-sans py-4 md:py-6 lg:py-8;
 }

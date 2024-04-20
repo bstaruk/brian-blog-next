@@ -1,7 +1,6 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import classNames from 'classnames';
 import Link from '@/components/atoms/Link';
 import Text from '@/components/atoms/Text';
 import Wrapper from '@/components/atoms/Wrapper';
@@ -21,8 +20,8 @@ const menuLinks: MenuLinkFields[] = [
     title: 'Home',
   },
   {
-    href: '/search',
-    title: 'Search Posts',
+    href: '/posts',
+    title: 'Posts',
   },
 ];
 
@@ -33,7 +32,7 @@ const GlobalHeader = ({ title }: GlobalHeaderProps): JSX.Element => {
     <Wrapper className="flex flex-col gap-3 mb-6" tagName="header">
       <h1 className="text--h1">{title}</h1>
 
-      <ul className="flex items-center gap-4">
+      <ul className="flex items-center gap-6">
         {menuLinks.map((link, linkIndex) => (
           <Text key={linkIndex} tagName="li">
             {pathname === link.href ? (
