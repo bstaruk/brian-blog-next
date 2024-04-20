@@ -1,7 +1,7 @@
 ---
 title: 'Baseball is Cool'
 excerpt: 'This is a wall of content about my favorite sport intended to be used as a boilerplate for rich text (WYSIWYG) content demos.'
-date: '2024-04-10T06:00:00.322Z'
+date: '2024-04-20T16:21'
 categories: ['general', 'dev']
 ---
 

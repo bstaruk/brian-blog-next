@@ -2,7 +2,9 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getAllPosts, getPostBySlug } from '@/lib/api';
 import { mdToHtml } from '@/lib/utils';
+import DateTime from '@/components/atoms/DateTime';
 import RichText from '@/components/atoms/RichText';
+import Text from '@/components/atoms/Text';
 import Page from '@/components/organisms/Page';
 
 export default async function PostDetails({ params }: Params) {
@@ -15,7 +17,15 @@ export default async function PostDetails({ params }: Params) {
   const content = await mdToHtml(post.content || '');
 
   return (
-    <Page title={post.title} className="flex flex-col gap-8">
+    <Page title={post.title} className="flex flex-col gap-4">
+      <Text
+        className="font-light text-gray-500 mb-2"
+        tagName="div"
+        variant="sm"
+      >
+        Posted <DateTime dateTime={post.date} />
+      </Text>
+
       <RichText {...{ content }} />
     </Page>
   );
