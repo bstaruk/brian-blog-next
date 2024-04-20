@@ -22,7 +22,7 @@ const Text = ({
   children,
   className,
   content,
-  tagName: TagName = 'p',
+  tagName: TagName = 'div',
   variant = 'body',
 }: TextProps): JSX.Element | null => {
   if (!children && !content) return null;

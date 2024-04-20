@@ -1,15 +1,15 @@
 @layer components {
   .rich-text {
     > *:not(:first-child) {
-      @apply mt-4;
+      @apply mt-6;
     }
 
-    p, ol, ul, table, blockquote {
+    p,
+    ol,
+    ul,
+    table,
+    blockquote {
       @apply text--body;
-    }
-
-    h1, h2, h3, h4, h5 {
-      @apply font-serif font-bold;
     }
 
     h1 {
@@ -18,6 +18,22 @@
 
     h2 {
       @apply text--h2;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      @apply font-serif font-bold;
+
+      &:not(:first-child) {
+        @apply mt-10;
+      }
+
+      ~ * {
+        @apply !mt-4;
+      }
     }
 
     a {

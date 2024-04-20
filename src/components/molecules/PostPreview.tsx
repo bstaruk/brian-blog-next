@@ -1,7 +1,7 @@
 import React from 'react';
+import classNames from 'classnames';
 import { Post } from '@/interfaces/post';
 import Link from '@/components/atoms/Link';
-import RichText from '@/components/atoms/RichText';
 import Text from '@/components/atoms/Text';
 
 type PostPreviewProps = {
@@ -10,13 +10,19 @@ type PostPreviewProps = {
 };
 
 const PostPreview = ({ className, post }: PostPreviewProps): JSX.Element => {
+  const href = `/posts/${post.slug}`;
+
   return (
-    <article {...{ className }}>
-      <Text variant="h2" tagName="h2" content={post.title} />
-      <RichText content={post.excerpt} />
-      <Link href={`/posts/${post.slug}`}>
-        Read More
-      </Link>
+    <article className={classNames('flex flex-col gap-2', className)}>
+      <Text variant="h3" tagName="h3">
+        <Link {...{ href }}>{post.title}</Link>
+      </Text>
+
+      <Text tagName="p" content={post.excerpt} />
+
+      <Text>
+        <Link {...{ href }}>Read More</Link>
+      </Text>
     </article>
   );
 };

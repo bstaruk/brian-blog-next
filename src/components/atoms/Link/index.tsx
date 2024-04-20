@@ -25,7 +25,10 @@ const Link = ({
   if (!children && !content) return null;
 
   return (
-    <a className={classNames(variantClasses[variant], className)} {...{ href, target }}>
+    <a
+      className={classNames(variantClasses[variant], className)}
+      {...{ href, target }}
+    >
       {content ?? children}
     </a>
   );

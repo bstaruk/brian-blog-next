@@ -2,7 +2,9 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getAllPosts, getPostBySlug } from '@/lib/api';
 import mdToHtml from '@/lib/mdToHtml';
+import Link from '@/components/atoms/Link';
 import RichText from '@/components/atoms/RichText';
+import Text from '@/components/atoms/Text';
 import Wrapper from '@/components/atoms/Wrapper';
 
 export default async function Post({ params }: Params) {
@@ -15,7 +17,10 @@ export default async function Post({ params }: Params) {
   const content = await mdToHtml(post.content || '');
 
   return (
-    <Wrapper tagName="main">
+    <Wrapper className="flex flex-col gap-6" tagName="main">
+      <Text>
+        <Link href="/">Back to Homepage</Link>
+      </Text>
       <RichText {...{ content }} />
     </Wrapper>
   );

@@ -3,5 +3,5 @@
 }
 
 body {
-  @apply font-sans;
+  @apply font-sans py-4 md:py-6 lg:py-8;
 }
