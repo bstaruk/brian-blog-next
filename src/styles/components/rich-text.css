@@ -1,0 +1,11 @@
+@layer components {
+  .rich-text {
+    a {
+      @apply link;
+    }
+
+    > *:not(:first-child) {
+      @apply mt-4;
+    }
+  }
+}

@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/api";
 import mdToHtml from "@/lib/mdToHtml";
+import RichText from "@/components/RichText";
 
 export default async function Post({ params }: Params) {
   const post = getPostBySlug(params.slug);
@@ -14,7 +15,7 @@ export default async function Post({ params }: Params) {
 
   return (
     <main>
-      <div dangerouslySetInnerHTML={{ '__html': content }} />
+      <RichText {...{ content }} />
     </main>
   );
 }
