@@ -16,6 +16,8 @@ export const postCategories: PostCategories = {
   }
 }
 
+export const getAllPostCategories = (): PostCategories => postCategories;
+
 export const getPostSlugs = () => {
   return fs.readdirSync(postsDirectory);
 };
