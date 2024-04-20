@@ -1,5 +1,5 @@
 import { getAllPosts } from '@/lib/api';
-import PostPreview from '@/components/PostPreview';
+import PostPreview from '@/components/molecules/PostPreview';
 
 export default function Home() {
   const allPosts = getAllPosts();

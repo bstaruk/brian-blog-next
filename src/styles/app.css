@@ -1,8 +1,8 @@
 /* Ordered Imports */
 @import './tailwind.css';
 @import './globals.css';
-@import '../components/Link/style.css';
-@import '../components/Text/style.css';
-@import '../components/RichText/style.css';
+@import '../components/atoms/Link/style.css';
+@import '../components/atoms/Text/style.css';
+@import '../components/atoms/RichText/style.css';
 
 /* Unordered Imports */

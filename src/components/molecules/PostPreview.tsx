@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 import { Post } from '@/interfaces/post';
-import RichText from '@/components/RichText';
-import Text from '@/components/Text';
+import RichText from '@/components/atoms/RichText';
+import Text from '@/components/atoms/Text';
 
 type PostPreviewProps = {
   className?: string;
