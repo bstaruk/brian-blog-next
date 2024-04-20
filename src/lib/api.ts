@@ -24,7 +24,11 @@ export function getAllPosts({ query }: PostSearchFields): Post[] {
     .map((slug) => getPostBySlug(slug))
     // filter by query
     .filter((post) => {
-      if (query && !post.title.toLowerCase().includes(query.toLowerCase())) {
+      if (
+        query &&
+        !post.title.toLowerCase().includes(query.toLowerCase()) &&
+        !post.excerpt.toLowerCase().includes(query.toLowerCase())
+      ) {
         return false;
       }
 
