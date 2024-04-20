@@ -1,11 +1,9 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getAllPosts, getPostBySlug } from '@/lib/api/posts';
-import mdToHtml from '@/lib/mdToHtml';
-import Link from '@/components/atoms/Link';
+import { getAllPosts, getPostBySlug } from '@/lib/api';
+import { mdToHtml } from '@/lib/utils';
 import RichText from '@/components/atoms/RichText';
-import Text from '@/components/atoms/Text';
-import Wrapper from '@/components/atoms/Wrapper';
+import Page from '@/components/organisms/Page';
 
 export default async function PostDetails({ params }: Params) {
   const post = getPostBySlug(params.slug);
@@ -17,12 +15,9 @@ export default async function PostDetails({ params }: Params) {
   const content = await mdToHtml(post.content || '');
 
   return (
-    <Wrapper className="flex flex-col gap-6" tagName="main">
-      <Text>
-        <Link href="/">Back to Homepage</Link>
-      </Text>
+    <Page title={post.title} className="flex flex-col gap-8">
       <RichText {...{ content }} />
-    </Wrapper>
+    </Page>
   );
 }
 

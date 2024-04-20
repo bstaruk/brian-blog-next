@@ -1,7 +1,8 @@
-import { getAllPosts } from '@/lib/api/posts';
+import { Metadata } from 'next';
+import { getAllPosts } from '@/lib/api';
 import PostPreview from '@/components/molecules/PostPreview';
 import SearchForm from '@/components/molecules/SearchForm';
-import Wrapper from '@/components/atoms/Wrapper';
+import Page from '@/components/organisms/Page';
 
 export default async function Search({
   searchParams,
@@ -14,11 +15,23 @@ export default async function Search({
   const allPosts = getAllPosts({ query });
 
   return (
-    <Wrapper className="flex flex-col gap-10" tagName="main">
+    <Page title="Search Posts" className="flex flex-col gap-8">
       <SearchForm />
+
       {allPosts.map((post, postIndex) => (
         <PostPreview key={postIndex} {...{ post }} />
       ))}
-    </Wrapper>
+    </Page>
   );
+}
+
+export function generateMetadata(): Metadata {
+  const title = `Search Posts | brian.staruk.net`;
+
+  return {
+    title,
+    openGraph: {
+      title,
+    },
+  };
 }

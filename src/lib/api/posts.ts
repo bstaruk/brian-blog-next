@@ -7,7 +7,7 @@ const postsDirectory = join(process.cwd(), '_posts');
 
 export const getPostSlugs = () => {
   return fs.readdirSync(postsDirectory);
-}
+};
 
 export const getPostBySlug = (slug: string) => {
   const realSlug = slug.replace(/\.md$/, '');
@@ -16,7 +16,7 @@ export const getPostBySlug = (slug: string) => {
   const { data, content } = matter(fileContents);
 
   return { ...data, slug: realSlug, content } as Post;
-}
+};
 
 export const getAllPosts = ({ query }: PostSearchFields): Post[] => {
   const slugs = getPostSlugs();
@@ -37,4 +37,4 @@ export const getAllPosts = ({ query }: PostSearchFields): Post[] => {
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
-}
+};

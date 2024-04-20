@@ -1,21 +1,27 @@
-import { getAllPosts } from '@/lib/api/posts';
-import Link from '@/components/atoms/Link';
+import { Metadata } from 'next';
+import { getAllPosts } from '@/lib/api';
 import PostPreview from '@/components/molecules/PostPreview';
-import Text from '@/components/atoms/Text';
-import Wrapper from '@/components/atoms/Wrapper';
+import Page from '@/components/organisms/Page';
 
 export default function Home() {
   const allPosts = getAllPosts({});
 
   return (
-    <Wrapper className="flex flex-col gap-10" tagName="main">
-      <Text>
-        <Link href="/search">Search Posts</Link>
-      </Text>
-
+    <Page title="brian.staruk.net" className="flex flex-col gap-8">
       {allPosts.map((post, postIndex) => (
         <PostPreview key={postIndex} {...{ post }} />
       ))}
-    </Wrapper>
+    </Page>
   );
+}
+
+export function generateMetadata(): Metadata {
+  const title = `Home | brian.staruk.net`;
+
+  return {
+    title,
+    openGraph: {
+      title,
+    },
+  };
 }

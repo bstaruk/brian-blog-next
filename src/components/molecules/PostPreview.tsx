@@ -14,14 +14,18 @@ const PostPreview = ({ className, post }: PostPreviewProps): JSX.Element => {
   const href = `/posts/${post.slug}`;
 
   return (
-    <article className={classNames('flex flex-col gap-2', className)}>
-      <Text variant="h3" tagName="h3" content={post.title} />
+    <article className={classNames('flex flex-col', className)}>
+      <Text className="mb-1" variant="h3" tagName="h3" content={post.title} />
 
-      <Text className="italic text-gray-500" tagName="div" variant="sm">
+      <Text
+        className="font-light text-gray-500 mb-2"
+        tagName="div"
+        variant="sm"
+      >
         <DateTime dateTime={post.date} />
       </Text>
 
-      <Text tagName="p" content={post.excerpt} />
+      <Text tagName="p" content={post.excerpt} className="mb-2" />
 
       <Text>
         <Link {...{ href }}>Read More</Link>
