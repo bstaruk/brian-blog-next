@@ -1,6 +1,6 @@
 /* Ordered Imports */
-@import '@/styles/tailwind.css';
-@import '@/styles/globals.css';
+@import './tailwind.css';
+@import './globals.css';
 
 /* Unordered Imports */
-@import '@/styles/components/link.css';
+@import './components/link.css';
