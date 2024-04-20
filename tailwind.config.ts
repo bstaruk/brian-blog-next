@@ -30,6 +30,10 @@ const config: Config = {
         sans: ['var(--font-lato), sans'],
         serif: ['var(--font-merriweather), sans-serif'],
       },
+      listStyleType: {
+        circle: 'circle',
+        roman: 'lower-roman',
+      },
     },
   },
   plugins: [require('@tailwindcss/forms')],

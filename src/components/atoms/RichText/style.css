@@ -39,5 +39,47 @@
     a {
       @apply link--default;
     }
+
+    ul, ol {
+      @apply pl-6;
+
+      > li {
+        &:not(:first-child) {
+          @apply mt-1.5;
+        }
+      }
+    }
+
+    ul {
+      > li {
+        @apply list-disc;
+
+        ul {
+          @apply mt-1.5;
+
+          > li {
+            @apply list-circle;
+          }
+        }
+      }
+    }
+
+    ol {
+      > li {
+        @apply list-decimal;
+
+        ol {
+          @apply mt-1.5;
+
+          > li {
+            @apply list-roman;
+          }
+        }
+      }
+    }
+
+    blockquote {
+      @apply border-l-4 border-red-700 bg-eggshell-500 p-4 flex flex-col gap-2;
+    }
   }
 }
