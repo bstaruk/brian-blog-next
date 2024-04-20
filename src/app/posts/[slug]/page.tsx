@@ -1,7 +1,11 @@
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { getAllPosts, getPostBySlug } from "@/lib/api";
-import mdToHtml from "@/lib/mdToHtml";
+import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { getAllPosts, getPostBySlug } from '@/lib/api';
+import mdToHtml from '@/lib/mdToHtml';
+import Link from '@/components/atoms/Link';
+import RichText from '@/components/atoms/RichText';
+import Text from '@/components/atoms/Text';
+import Wrapper from '@/components/atoms/Wrapper';
 
 export default async function Post({ params }: Params) {
   const post = getPostBySlug(params.slug);
@@ -10,12 +14,15 @@ export default async function Post({ params }: Params) {
     return notFound();
   }
 
-  const content = await mdToHtml(post.content || "");
+  const content = await mdToHtml(post.content || '');
 
   return (
-    <main>
-      <div dangerouslySetInnerHTML={{ '__html': content }} />
-    </main>
+    <Wrapper className="flex flex-col gap-6" tagName="main">
+      <Text>
+        <Link href="/">Back to Homepage</Link>
+      </Text>
+      <RichText {...{ content }} />
+    </Wrapper>
   );
 }
 
@@ -43,7 +50,7 @@ export function generateMetadata({ params }: Params): Metadata {
 }
 
 export async function generateStaticParams() {
-  const posts = getAllPosts();
+  const posts = getAllPosts({});
 
   return posts.map((post) => ({
     slug: post.slug,
