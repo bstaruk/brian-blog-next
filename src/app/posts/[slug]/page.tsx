@@ -1,8 +1,8 @@
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { getAllPosts, getPostBySlug } from "@/lib/api";
-import mdToHtml from "@/lib/mdToHtml";
-import RichText from "@/components/RichText";
+import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { getAllPosts, getPostBySlug } from '@/lib/api';
+import mdToHtml from '@/lib/mdToHtml';
+import RichText from '@/components/RichText';
 
 export default async function Post({ params }: Params) {
   const post = getPostBySlug(params.slug);
@@ -11,7 +11,7 @@ export default async function Post({ params }: Params) {
     return notFound();
   }
 
-  const content = await mdToHtml(post.content || "");
+  const content = await mdToHtml(post.content || '');
 
   return (
     <main>

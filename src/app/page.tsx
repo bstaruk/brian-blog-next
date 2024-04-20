@@ -1,4 +1,4 @@
-import { getAllPosts } from "@/lib/api";
+import { getAllPosts } from '@/lib/api';
 
 export default function Home() {
   const allPosts = getAllPosts();
