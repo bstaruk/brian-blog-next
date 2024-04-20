@@ -45,6 +45,9 @@ const SearchForm = ({
     replace(pathname);
   };
 
+  const queryValue = searchParams.get('query')?.toString();
+  const categoryValue = searchParams.get('category')?.toString();
+
   return (
     <form
       className="flex flex-col md:flex-row gap-4"
@@ -63,9 +66,9 @@ const SearchForm = ({
           onChange={(e) => {
             handleSearch(e.target.value);
           }}
-          defaultValue={searchParams.get('query')?.toString()}
+          defaultValue={queryValue}
+          key={queryValue}
           id="search"
-          key={searchParams.get('query')?.toString()}
         />
       </div>
 
@@ -80,8 +83,8 @@ const SearchForm = ({
           onChange={(e) => {
             handleCategory(e.target.value);
           }}
-          defaultValue={searchParams.get('category')?.toString()}
-          key={searchParams.get('category')?.toString()}
+          defaultValue={categoryValue}
+          key={categoryValue}
         >
           <option value="">All Categories</option>
           {Object.entries(postCategories).map(([key, value], catIndex) => (
