@@ -7,7 +7,7 @@ import RichText from '@/components/atoms/RichText';
 import Text from '@/components/atoms/Text';
 import Wrapper from '@/components/atoms/Wrapper';
 
-export default async function Post({ params }: Params) {
+export default async function PostDetails({ params }: Params) {
   const post = getPostBySlug(params.slug);
 
   if (!post) {
