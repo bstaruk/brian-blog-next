@@ -1,7 +1,7 @@
 ---
 title: 'Baseball is cool'
 excerpt: 'Triple play rubber game run red sox right field ejection gapper hot dog count. Unearned run play dodgers left fielder pull win double play ball club. Triple play chin music bush league error rally loss rake umpire losses.'
-date: '2024-04-20T08:00:00.322Z',
+date: '2024-04-20T08:00:00.322Z'
 categories: ['baseball', 'general']
 ---
 
