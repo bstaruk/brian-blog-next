@@ -24,10 +24,6 @@ const menuLinks: MenuLinkFields[] = [
     href: '/posts',
     title: 'Posts',
   },
-  {
-    href: '/search',
-    title: 'Search Posts',
-  },
 ];
 
 const GlobalHeader = ({ title }: GlobalHeaderProps): JSX.Element => {
