@@ -8,6 +8,14 @@ export type Post = {
   title: string;
 };
 
+export type PostCategories = {
+  [key: string]: {
+    description: string;
+    title: string;
+  };
+};
+
+
 export type PostSearchFields = {
   query?: string;
 };
