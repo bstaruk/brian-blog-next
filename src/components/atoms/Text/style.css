@@ -1,7 +1,7 @@
 @layer components {
   .text {
     &--body {
-      @apply font-sans text-md;
+      @apply font-sans text-base;
     }
 
     &--h1 {

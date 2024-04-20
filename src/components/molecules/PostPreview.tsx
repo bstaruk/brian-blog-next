@@ -1,6 +1,6 @@
 import React from 'react';
-import classNames from 'classnames';
 import { Post } from '@/interfaces/post';
+import Link from '@/components/atoms/Link';
 import RichText from '@/components/atoms/RichText';
 import Text from '@/components/atoms/Text';
 
@@ -14,6 +14,9 @@ const PostPreview = ({ className, post }: PostPreviewProps): JSX.Element => {
     <article {...{ className }}>
       <Text variant="h2" tagName="h2" content={post.title} />
       <RichText content={post.excerpt} />
+      <Link href={`/posts/${post.slug}`}>
+        Read More
+      </Link>
     </article>
   );
 };
