@@ -5,7 +5,6 @@ type RichTextProps = {
   children?: React.ReactNode;
   className?: string;
   content?: string;
-  size?: 'body';
   tagName?: React.ElementType;
 };
 
