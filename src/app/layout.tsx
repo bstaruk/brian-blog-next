@@ -1,8 +1,19 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import classNames from 'classnames';
+import { Lato, Merriweather } from 'next/font/google';
 import '@/styles/app.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const lato = Lato({
+  subsets: ['latin'],
+  variable: '--font-lato',
+  weight: ['400', '700'],
+});
+
+const merriweather = Merriweather({
+  subsets: ['latin'],
+  variable: '--font-merriweather',
+  weight: ['400', '700'],
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={classNames(lato.variable, merriweather.variable)}>
+        {children}
+      </body>
     </html>
   );
 }
