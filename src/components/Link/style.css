@@ -1,5 +1,8 @@
 @layer components {
   .link {
-    @apply underline hover:no-underline;
+    /* Variant: default */
+    &--default {
+      @apply underline hover:no-underline;
+    }
   }
 }
