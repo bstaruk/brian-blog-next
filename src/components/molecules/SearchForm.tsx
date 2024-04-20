@@ -1,17 +1,20 @@
 'use client';
 
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
+import { useDebounceCallback } from 'usehooks-ts';
 
 type SearchFormProps = {
   placeholder?: string;
 };
 
-const SearchForm = ({ placeholder }: SearchFormProps): JSX.Element => {
+const SearchForm = ({
+  placeholder = 'Search...',
+}: SearchFormProps): JSX.Element => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
 
-  const handleSearch = (term: string) => {
+  const handleSearch = useDebounceCallback((term: string) => {
     const params = new URLSearchParams(searchParams);
     if (term) {
       params.set('query', term);
@@ -20,15 +23,15 @@ const SearchForm = ({ placeholder }: SearchFormProps): JSX.Element => {
     }
 
     replace(`${pathname}?${params.toString()}`);
-  };
+  }, 300);
 
   return (
-    <div className="relative flex flex-1 flex-shrink-0">
+    <div>
       <label htmlFor="search" className="sr-only">
         Search
       </label>
       <input
-        className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
+        className="text--body block w-full rounded border border-gray-400 py-2 px-4 placeholder:text-gray-500"
         placeholder={placeholder}
         onChange={(e) => {
           handleSearch(e.target.value);

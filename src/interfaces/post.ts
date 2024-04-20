@@ -6,3 +6,7 @@ export type Post = {
   content: string;
   preview?: boolean;
 };
+
+export type PostSearchFields = {
+  query?: string;
+};
