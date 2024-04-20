@@ -7,6 +7,7 @@
     "build": "next build",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}'",
     "lint": "next lint",
+    "lint-css": "stylelint src/**/*.css",
     "start": "next start"
   },
   "dependencies": {
@@ -29,6 +30,9 @@
     "postcss-import": "^16.1.0",
     "postcss-preset-env": "^9.5.6",
     "prettier": "^3.2.5",
+    "stylelint": "^16.3.1",
+    "stylelint-config-recommended": "^14.0.0",
+    "stylelint-config-standard": "^36.0.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
