@@ -7,18 +7,12 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    fontFamily: {
-      sans: ['var(--font-lato), sans'],
-      serif: ['var(--font-merriweather), sans-serif'],
+    extend: {
+      fontFamily: {
+        sans: ['var(--font-lato), sans'],
+        serif: ['var(--font-merriweather), sans-serif'],
+      },
     },
-    fontSize: {
-      sm: '0.875rem',
-      md: '1rem',
-      lg: '1.25rem',
-      xl: '1.5rem',
-      '2xl': '1.75rem',
-    },
-    extend: {},
   },
   plugins: [],
 };
