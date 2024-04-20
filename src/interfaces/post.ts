@@ -1,10 +1,11 @@
 export type Post = {
-  slug: string;
-  title: string;
+  categories: string[];
+  content: string;
   date: string;
   excerpt: string;
-  content: string;
   preview?: boolean;
+  slug: string;
+  title: string;
 };
 
 export type PostSearchFields = {
