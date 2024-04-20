@@ -1,15 +1,15 @@
 @layer components {
   .rich-text {
-    > *:not(:first-child) {
-      @apply mt-6;
-    }
-
     p,
     ol,
     ul,
     table,
     blockquote {
       @apply text--body;
+
+      &:not(:first-child) {
+        @apply mt-3;
+      }
     }
 
     h1 {
@@ -20,19 +20,30 @@
       @apply text--h2;
     }
 
+    h3 {
+      @apply text--h3;
+    }
+
+    h4 {
+      @apply text--h4;
+    }
+
+    h5 {
+      @apply text--h5;
+    }
+
     h1,
     h2,
-    h3,
+    h3 {
+      &:not(:first-child) {
+        @apply mt-8;
+      }
+    }
+
     h4,
     h5 {
-      @apply font-serif font-bold;
-
       &:not(:first-child) {
-        @apply mt-10;
-      }
-
-      ~ * {
-        @apply !mt-4;
+        @apply mt-6;
       }
     }
 
@@ -45,7 +56,11 @@
 
       > li {
         &:not(:first-child) {
-          @apply mt-1.5;
+          @apply mt-2;
+        }
+
+        ul, ol {
+          @apply !mt-1;
         }
       }
     }
@@ -55,7 +70,7 @@
         @apply list-disc;
 
         ul {
-          @apply mt-1.5;
+          @apply mt-2;
 
           > li {
             @apply list-circle;
@@ -80,6 +95,14 @@
 
     blockquote {
       @apply border-l-8 border-red-700 bg-eggshell-500 p-4 flex flex-col gap-2;
+
+      &:not(:first-child) {
+        @apply mt-8;
+      }
+
+      &:not(:last-child) {
+        @apply mb-8;
+      }
     }
   }
 }
