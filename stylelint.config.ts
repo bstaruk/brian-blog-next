@@ -19,5 +19,6 @@ export default {
 
     /* Other Rules */
     'import-notation': null, // Allow string and url imports
+    'no-descending-specificity': null, // Don't talk to me or my son ever again
   },
 };
