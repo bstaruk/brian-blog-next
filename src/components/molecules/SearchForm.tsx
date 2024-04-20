@@ -19,6 +19,7 @@ const SearchForm = ({
 
   const handleSearch = useDebounceCallback((term: string) => {
     const params = new URLSearchParams(searchParams);
+
     if (term) {
       params.set('query', term);
     } else {
@@ -30,6 +31,7 @@ const SearchForm = ({
 
   const handleCategory = (category: string) => {
     const params = new URLSearchParams(searchParams);
+
     if (category) {
       params.set('category', category);
     } else {
@@ -39,9 +41,13 @@ const SearchForm = ({
     replace(`${pathname}?${params.toString()}`);
   };
 
+  const handleClearFilters = () => {
+    replace(pathname);
+  };
+
   return (
     <form
-      className="flex gap-6"
+      className="flex flex-col md:flex-row gap-4"
       onSubmit={(e) => {
         e.preventDefault();
       }}
@@ -59,6 +65,7 @@ const SearchForm = ({
           }}
           defaultValue={searchParams.get('query')?.toString()}
           id="search"
+          key={searchParams.get('query')?.toString()}
         />
       </div>
 
@@ -74,8 +81,9 @@ const SearchForm = ({
             handleCategory(e.target.value);
           }}
           defaultValue={searchParams.get('category')?.toString()}
+          key={searchParams.get('category')?.toString()}
         >
-          <option value="">Category</option>
+          <option value="">All Categories</option>
           {Object.entries(postCategories).map(([key, value], catIndex) => (
             <option value={key} key={catIndex}>
               {value.title}
@@ -83,6 +91,14 @@ const SearchForm = ({
           ))}
         </select>
       </div>
+
+      <button
+        type="button"
+        onClick={handleClearFilters}
+        className="text--body link--default py-2 px-4 rounded border border-transparent focus:outline focus:outline-1 focus:outline-eggplant-700 focus:border-eggplant-700"
+      >
+        Clear Filters
+      </button>
     </form>
   );
 };
