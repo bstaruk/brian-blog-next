@@ -1,4 +1,4 @@
-import { getAllPosts } from '@/lib/api/posts';
+import { getAllPosts } from '@/lib/api';
 import PostPreview from '@/components/molecules/PostPreview';
 import SearchForm from '@/components/molecules/SearchForm';
 import Wrapper from '@/components/atoms/Wrapper';

@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getAllPosts, getPostBySlug } from '@/lib/api/posts';
-import mdToHtml from '@/lib/mdToHtml';
+import { getAllPosts, getPostBySlug } from '@/lib/api';
+import { mdToHtml } from '@/lib/utils';
 import Link from '@/components/atoms/Link';
 import RichText from '@/components/atoms/RichText';
 import Text from '@/components/atoms/Text';
