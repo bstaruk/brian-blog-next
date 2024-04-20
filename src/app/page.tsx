@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { getAllPosts } from '@/lib/api';
 import PostPreview from '@/components/molecules/PostPreview';
 import Page from '@/components/organisms/Page';
@@ -12,4 +13,15 @@ export default function Home() {
       ))}
     </Page>
   );
+}
+
+export function generateMetadata(): Metadata {
+  const title = `Home | brian.staruk.net`;
+
+  return {
+    title,
+    openGraph: {
+      title,
+    },
+  };
 }

@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { getAllPosts } from '@/lib/api';
 import PostPreview from '@/components/molecules/PostPreview';
 import SearchForm from '@/components/molecules/SearchForm';
@@ -22,4 +23,15 @@ export default async function Search({
       ))}
     </Page>
   );
+}
+
+export function generateMetadata(): Metadata {
+  const title = `Search Posts | brian.staruk.net`;
+
+  return {
+    title,
+    openGraph: {
+      title,
+    },
+  };
 }
