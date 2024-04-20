@@ -1,7 +1,7 @@
 ---
-title: 'Learn How to Pre-render Pages Using Static Generation with Next.js'
-excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.'
-date: '2024-03-16T05:35:07.322Z'
+title: 'Baseball is cool'
+excerpt: 'Triple play rubber game run red sox right field ejection gapper hot dog count. Unearned run play dodgers left fielder pull win double play ball club. Triple play chin music bush league error rally loss rake umpire losses.'
+date: '2024-04-20T08:00:00.322Z'
 ---
 
 Triple play rubber game run red sox right field ejection gapper hot dog count. Unearned run play dodgers left fielder pull win double play ball club. Triple play chin music bush league error rally loss rake umpire losses. Steal fair breaking ball starting pitcher baseball fan cy young breaking ball club. Fall classic club backstop pinch hitter cheese, league slider good eye check swing. Outs rope peanuts bleeder mitt nubber cubs.
