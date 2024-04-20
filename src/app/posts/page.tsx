@@ -15,7 +15,7 @@ export default async function Posts({
   const allPosts = getAllPosts({ query });
 
   return (
-    <Page title="Posts" className="flex flex-col gap-8">
+    <Page title="Brian's Dev Blog" className="flex flex-col gap-8">
       <SearchForm />
 
       {allPosts.map((post, postIndex) => (
