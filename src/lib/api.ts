@@ -5,11 +5,11 @@ import { join } from 'path';
 
 const postsDirectory = join(process.cwd(), '_posts');
 
-export function getPostSlugs() {
+export const getPostSlugs = () => {
   return fs.readdirSync(postsDirectory);
 }
 
-export function getPostBySlug(slug: string) {
+export const getPostBySlug = (slug: string) => {
   const realSlug = slug.replace(/\.md$/, '');
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
@@ -18,7 +18,7 @@ export function getPostBySlug(slug: string) {
   return { ...data, slug: realSlug, content } as Post;
 }
 
-export function getAllPosts({ query }: PostSearchFields): Post[] {
+export const getAllPosts = ({ query }: PostSearchFields): Post[] => {
   const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug))
