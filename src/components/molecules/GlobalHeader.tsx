@@ -1,7 +1,6 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import classNames from 'classnames';
 import Link from '@/components/atoms/Link';
 import Text from '@/components/atoms/Text';
 import Wrapper from '@/components/atoms/Wrapper';

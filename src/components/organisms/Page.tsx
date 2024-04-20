@@ -1,3 +1,4 @@
+import GlobalFooter from '@/components/molecules/GlobalFooter';
 import GlobalHeader from '@/components/molecules/GlobalHeader';
 import Wrapper from '@/components/atoms/Wrapper';
 
@@ -14,6 +15,7 @@ const Page = ({ children, className, title }: PageProps): JSX.Element => {
       <Wrapper tagName="main" {...{ className }}>
         {children}
       </Wrapper>
+      <GlobalFooter />
     </>
   );
 };
