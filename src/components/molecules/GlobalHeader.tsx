@@ -21,6 +21,10 @@ const menuLinks: MenuLinkFields[] = [
     title: 'Home',
   },
   {
+    href: '/posts',
+    title: 'Posts',
+  },
+  {
     href: '/search',
     title: 'Search Posts',
   },
@@ -33,7 +37,7 @@ const GlobalHeader = ({ title }: GlobalHeaderProps): JSX.Element => {
     <Wrapper className="flex flex-col gap-3 mb-6" tagName="header">
       <h1 className="text--h1">{title}</h1>
 
-      <ul className="flex items-center gap-4">
+      <ul className="flex items-center gap-6">
         {menuLinks.map((link, linkIndex) => (
           <Text key={linkIndex} tagName="li">
             {pathname === link.href ? (

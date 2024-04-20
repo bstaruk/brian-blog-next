@@ -1,20 +1,22 @@
 import { Metadata } from 'next';
 import { getAllPosts } from '@/lib/api';
-import Text from '@/components/atoms/Text';
+import PostPreview from '@/components/molecules/PostPreview';
 import Page from '@/components/organisms/Page';
 
-export default function Home() {
+export default function Posts() {
   const allPosts = getAllPosts({});
 
   return (
-    <Page title="brian.staruk.net" className="flex flex-col gap-8">
-      <Text>Hello World</Text>
+    <Page title="Posts" className="flex flex-col gap-8">
+      {allPosts.map((post, postIndex) => (
+        <PostPreview key={postIndex} {...{ post }} />
+      ))}
     </Page>
   );
 }
 
 export function generateMetadata(): Metadata {
-  const title = `Home | brian.staruk.net`;
+  const title = `Posts | brian.staruk.net`;
 
   return {
     title,
