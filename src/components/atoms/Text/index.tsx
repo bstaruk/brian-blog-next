@@ -6,10 +6,11 @@ type TextProps = {
   className?: string;
   content?: string;
   tagName?: React.ElementType;
-  variant?: 'body' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
+  variant?: 'sm' | 'body' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
 };
 
 const variantClasses = {
+  sm: 'text--sm',
   body: 'text--body',
   h1: 'text--h1',
   h2: 'text--h2',

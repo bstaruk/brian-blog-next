@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <Wrapper className="flex flex-col gap-10" tagName="main">
       <Text>
-        <Link href="/search">Search All Posts</Link>
+        <Link href="/search">Search Posts</Link>
       </Text>
 
       {allPosts.map((post, postIndex) => (

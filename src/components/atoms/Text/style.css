@@ -23,5 +23,9 @@
     &--h5 {
       @apply font-sans font-bold text-xl;
     }
+
+    &--sm {
+      @apply font-sans text-base;
+    }
   }
 }
