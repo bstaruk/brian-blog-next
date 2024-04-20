@@ -79,7 +79,7 @@
     }
 
     blockquote {
-      @apply border-l-4 border-red-700 bg-eggshell-500 p-4 flex flex-col gap-2;
+      @apply border-l-8 border-red-700 bg-eggshell-500 p-4 flex flex-col gap-2;
     }
   }
 }
