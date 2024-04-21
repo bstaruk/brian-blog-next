@@ -2,15 +2,13 @@
 
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import { useDebounceCallback } from 'usehooks-ts';
-import { PostCategories } from '@/interfaces/post';
+import { postCategories } from '@/lib/api/postCategories';
 
 type SearchFormProps = {
-  postCategories?: PostCategories;
   placeholder?: string;
 };
 
 const SearchForm = ({
-  postCategories = {},
   placeholder = 'Search...',
 }: SearchFormProps): JSX.Element => {
   const searchParams = useSearchParams();

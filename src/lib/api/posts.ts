@@ -1,22 +1,9 @@
-import { Post, PostCategories, PostSearchFields } from '@/interfaces/post';
+import { Post, PostSearchFields } from '@/interfaces/post';
 import fs from 'fs';
 import matter from 'gray-matter';
 import { join } from 'path';
 
 const postsDirectory = join(process.cwd(), '_posts');
-
-export const postCategories: PostCategories = {
-  dev: {
-    description: 'Notes about code.',
-    title: 'Dev Notes',
-  },
-  general: {
-    description: 'Notes about things.',
-    title: 'General Notes',
-  },
-};
-
-export const getAllPostCategories = (): PostCategories => postCategories;
 
 export const getPostSlugs = () => {
   return fs.readdirSync(postsDirectory);
