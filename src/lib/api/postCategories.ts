@@ -1,4 +1,4 @@
-import { PostCategories } from "@/interfaces/post";
+import { PostCategories } from '@/interfaces/post';
 
 export const postCategories: PostCategories = {
   dev: {

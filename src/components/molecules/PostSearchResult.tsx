@@ -13,7 +13,10 @@ type PostSearchResultProps = {
   post: Post;
 };
 
-const PostSearchResult = ({ className, post }: PostSearchResultProps): JSX.Element => {
+const PostSearchResult = ({
+  className,
+  post,
+}: PostSearchResultProps): JSX.Element => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();

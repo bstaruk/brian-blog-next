@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import NextLink from 'next/link'
+import NextLink from 'next/link';
 
 type LinkProps = {
   children?: React.ReactNode;
