@@ -2,7 +2,7 @@
 title: 'Wall of Baseball'
 excerpt: 'This is a wall of text about my favorite sport, intended to be used as a boilerplate for rich text (WYSIWYG) content demos.'
 date: '2024-04-20T16:21'
-categories: ['general', 'dev']
+categories: ['dev']
 ---
 
 ## Introduction
