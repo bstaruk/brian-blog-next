@@ -31,12 +31,16 @@ export const getPostBySlug = (slug: string) => {
   return { ...data, slug: realSlug, content } as Post;
 };
 
-export const getAllPosts = ({ query }: PostSearchFields): Post[] => {
+export const getAllPosts = ({ category, query }: PostSearchFields): Post[] => {
   const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug))
     // filter by query
     .filter((post) => {
+      if (category && !post.categories.some((c) => c === category)) {
+        return false;
+      }
+
       if (
         query &&
         !post.title.toLowerCase().includes(query.toLowerCase()) &&

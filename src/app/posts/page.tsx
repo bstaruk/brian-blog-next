@@ -8,11 +8,13 @@ export default async function Posts({
   searchParams,
 }: {
   searchParams?: {
+    category?: string;
     query?: string;
   };
 }) {
+  const category = searchParams?.category;
   const query = searchParams?.query;
-  const allPosts = getAllPosts({ query });
+  const allPosts = getAllPosts({ category, query });
   const postCategories = getAllPostCategories();
 
   return (
