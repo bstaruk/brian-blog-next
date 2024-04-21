@@ -15,7 +15,6 @@ export type PostCategories = {
   };
 };
 
-
 export type PostSearchFields = {
   query?: string;
 };

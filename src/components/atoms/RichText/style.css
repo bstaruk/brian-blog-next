@@ -51,7 +51,8 @@
       @apply link--default;
     }
 
-    ul, ol {
+    ul,
+    ol {
       @apply pl-6;
 
       > li {
@@ -59,7 +60,8 @@
           @apply mt-2;
         }
 
-        ul, ol {
+        ul,
+        ol {
           @apply !mt-1;
         }
       }

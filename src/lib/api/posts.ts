@@ -8,13 +8,13 @@ const postsDirectory = join(process.cwd(), '_posts');
 export const postCategories: PostCategories = {
   dev: {
     description: 'Notes about code.',
-    title: 'Dev Notes'
+    title: 'Dev Notes',
   },
   general: {
     description: 'Notes about things.',
-    title: 'General Notes'
-  }
-}
+    title: 'General Notes',
+  },
+};
 
 export const getAllPostCategories = (): PostCategories => postCategories;
 
