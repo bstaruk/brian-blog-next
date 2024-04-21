@@ -19,7 +19,7 @@ export default async function PostDetails({ params }: Params) {
   return (
     <Page title={post.title} className="flex flex-col gap-4">
       <Text
-        className="font-light text-gray-500 mb-2"
+        className="font-light text-gray-500"
         tagName="div"
         variant="sm"
       >

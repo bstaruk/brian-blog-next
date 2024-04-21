@@ -3,5 +3,5 @@
 }
 
 body {
-  @apply bg-eggshell-400 text-eggplant-700 font-sans p-4 md:p-6 lg:p-8;
+  @apply bg-eggshell-400 text-eggplant-700 font-sans p-4 sm:p-6 md:p-8 lg:p-12;
 }
