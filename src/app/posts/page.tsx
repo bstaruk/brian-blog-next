@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
-import { getAllPosts, getAllPostCategories } from '@/lib/api';
-import PostPreview from '@/components/molecules/PostPreview';
-import SearchForm from '@/components/molecules/SearchForm';
+import { getAllPosts } from '@/lib/api';
+import PostSearchResult from '@/components/molecules/PostSearchResult';
+import PostSearchForm from '@/components/molecules/PostSearchForm';
 import Page from '@/components/organisms/Page';
 
 export default async function Posts({
@@ -15,14 +15,13 @@ export default async function Posts({
   const category = searchParams?.category;
   const query = searchParams?.query;
   const allPosts = getAllPosts({ category, query });
-  const postCategories = getAllPostCategories();
 
   return (
     <Page title="Brian's Dev Blog" className="flex flex-col gap-8">
-      <SearchForm {...{ postCategories }} />
+      <PostSearchForm />
 
       {allPosts.map((post, postIndex) => (
-        <PostPreview key={postIndex} {...{ post }} />
+        <PostSearchResult key={postIndex} {...{ post }} />
       ))}
     </Page>
   );

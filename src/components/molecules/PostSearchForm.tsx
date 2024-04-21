@@ -2,22 +2,20 @@
 
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import { useDebounceCallback } from 'usehooks-ts';
-import { PostCategories } from '@/interfaces/post';
+import { postCategories } from '@/lib/api/postCategories';
 
-type SearchFormProps = {
-  postCategories?: PostCategories;
+type PostSearchFormProps = {
   placeholder?: string;
 };
 
-const SearchForm = ({
-  postCategories = {},
+const PostSearchForm = ({
   placeholder = 'Search...',
-}: SearchFormProps): JSX.Element => {
+}: PostSearchFormProps): JSX.Element => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
 
-  const handleSearch = useDebounceCallback((term: string) => {
+  const onQueryChange = useDebounceCallback((term: string) => {
     const params = new URLSearchParams(searchParams);
 
     if (term) {
@@ -29,7 +27,7 @@ const SearchForm = ({
     replace(`${pathname}?${params.toString()}`);
   }, 300);
 
-  const handleCategory = (category: string) => {
+  const onCategoryChange = (category: string) => {
     const params = new URLSearchParams(searchParams);
 
     if (category) {
@@ -64,7 +62,7 @@ const SearchForm = ({
           className="text--body block w-full rounded border bg-eggshell-400 text-eggplant-700 border-eggplant-200 py-2 px-4 placeholder:text-eggplant-200 focus:ring-eggplant-700 focus:border-eggplant-700"
           placeholder={placeholder}
           onChange={(e) => {
-            handleSearch(e.target.value);
+            onQueryChange(e.target.value);
           }}
           defaultValue={queryValue}
           key={queryValue}
@@ -81,7 +79,7 @@ const SearchForm = ({
           className="text--body block w-full rounded border bg-eggshell-400 text-eggplant-700 border-eggplant-200 py-2 pl-4 pr-10 placeholder:text-eggplant-200 focus:ring-eggplant-700 focus:border-eggplant-700"
           id="category"
           onChange={(e) => {
-            handleCategory(e.target.value);
+            onCategoryChange(e.target.value);
           }}
           defaultValue={categoryValue}
           key={categoryValue}
@@ -106,4 +104,4 @@ const SearchForm = ({
   );
 };
 
-export default SearchForm;
+export default PostSearchForm;

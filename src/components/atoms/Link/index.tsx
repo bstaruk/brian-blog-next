@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import NextLink from 'next/link';
 
 type LinkProps = {
   children?: React.ReactNode;
@@ -25,12 +26,12 @@ const Link = ({
   if (!children && !content) return null;
 
   return (
-    <a
+    <NextLink
       className={classNames(variantClasses[variant], className)}
       {...{ href, target }}
     >
       {content ?? children}
-    </a>
+    </NextLink>
   );
 };
 

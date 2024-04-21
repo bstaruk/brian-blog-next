@@ -1,18 +1,38 @@
-import React from 'react';
+'use client';
+
 import classNames from 'classnames';
+import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import { Post } from '@/interfaces/post';
-import { postCategories } from '@/lib/api';
+import { postCategories } from '@/lib/api/postCategories';
 import DateTime from '@/components/atoms/DateTime';
 import Link from '@/components/atoms/Link';
 import Text from '@/components/atoms/Text';
 
-type PostPreviewProps = {
+type PostSearchResultProps = {
   className?: string;
   post: Post;
 };
 
-const PostPreview = ({ className, post }: PostPreviewProps): JSX.Element => {
+const PostSearchResult = ({
+  className,
+  post,
+}: PostSearchResultProps): JSX.Element => {
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const { replace } = useRouter();
   const href = `/posts/${post.slug}`;
+
+  const onCategoryClick = (category: string) => {
+    const params = new URLSearchParams(searchParams);
+
+    if (category) {
+      params.set('category', category);
+    } else {
+      params.delete('category');
+    }
+
+    replace(`${pathname}?${params.toString()}`);
+  };
 
   return (
     <article className={classNames('flex flex-col', className)}>
@@ -42,6 +62,7 @@ const PostPreview = ({ className, post }: PostPreviewProps): JSX.Element => {
             <Text tagName="li" variant="sm" key={catIndex}>
               <button
                 type="button"
+                onClick={() => onCategoryClick(cat)}
                 className="link--default p-1 rounded border border-transparent focus:outline focus:outline-1 focus:outline-eggplant-700 focus:border-eggplant-700"
               >
                 {postCategories[cat].title}
@@ -55,4 +76,4 @@ const PostPreview = ({ className, post }: PostPreviewProps): JSX.Element => {
   );
 };
 
-export default PostPreview;
+export default PostSearchResult;
