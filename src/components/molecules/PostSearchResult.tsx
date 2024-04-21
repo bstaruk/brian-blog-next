@@ -6,12 +6,12 @@ import DateTime from '@/components/atoms/DateTime';
 import Link from '@/components/atoms/Link';
 import Text from '@/components/atoms/Text';
 
-type PostPreviewProps = {
+type PostSearchResultProps = {
   className?: string;
   post: Post;
 };
 
-const PostPreview = ({ className, post }: PostPreviewProps): JSX.Element => {
+const PostSearchResult = ({ className, post }: PostSearchResultProps): JSX.Element => {
   const href = `/posts/${post.slug}`;
 
   return (
@@ -55,4 +55,4 @@ const PostPreview = ({ className, post }: PostPreviewProps): JSX.Element => {
   );
 };
 
-export default PostPreview;
+export default PostSearchResult;
