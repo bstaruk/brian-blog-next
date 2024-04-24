@@ -1,5 +1,8 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect } from 'react';
 import classNames from 'classnames';
+import hljs from 'highlight.js';
 
 type RichTextProps = {
   children?: React.ReactNode;
@@ -14,6 +17,12 @@ const RichText = ({
   content,
   tagName: TagName = 'div',
 }: RichTextProps): JSX.Element | null => {
+  useEffect(() => {
+    if (!!content) {
+      hljs.highlightAll();
+    }
+  }, [content]);
+
   if (!children && !content) return null;
 
   return (

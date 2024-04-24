@@ -1,15 +1,15 @@
 @layer components {
   .rich-text {
+    > *:not(:first-child) {
+      @apply mt-3;
+    }
+
     p,
     ol,
     ul,
     table,
     blockquote {
       @apply text--body;
-
-      &:not(:first-child) {
-        @apply mt-3;
-      }
     }
 
     h1 {
