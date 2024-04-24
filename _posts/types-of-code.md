@@ -1,7 +1,7 @@
 ---
 title: 'Types of Code'
 excerpt: 'Some markup snippets that help with testing syntax highlighting in blocks of code.'
-date: '2024-04-20T16:21'
+date: '2024-04-24T13:47'
 categories: ['dev']
 ---
 
