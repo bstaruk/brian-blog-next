@@ -1,3 +1,6 @@
+/* Dependency Imports */
+@import 'highlight.js/styles/default.css';
+
 /* Ordered Imports */
 @import './tailwind.css';
 @import './globals.css';
