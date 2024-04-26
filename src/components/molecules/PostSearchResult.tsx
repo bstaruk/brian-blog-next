@@ -36,7 +36,9 @@ const PostSearchResult = ({
 
   return (
     <article className={classNames('flex flex-col', className)}>
-      <Text className="mb-1" variant="h3" tagName="h3" content={post.title} />
+      <Text className="mb-1" variant="h3" tagName="h3">
+        <Link {...{ href }}>{post.title}</Link>
+      </Text>
 
       <Text
         className="font-light text-gray-500 mb-2"
@@ -46,14 +48,10 @@ const PostSearchResult = ({
         <DateTime dateTime={post.date} />
       </Text>
 
-      <Text tagName="p" content={post.excerpt} className="mb-2" />
-
-      <Text>
-        <Link {...{ href }}>Read More</Link>
-      </Text>
+      <Text tagName="p" content={post.excerpt} />
 
       {!!post.categories?.length && (
-        <ul className="flex items-center flex-wrap gap-1 mt-2">
+        <ul className="flex items-center flex-wrap gap-1 mt-1.5">
           <Text tagName="li" variant="sm">
             Tags:
           </Text>
