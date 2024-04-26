@@ -1,5 +1,5 @@
 ---
-title: 'Postgres Docker Container'
+title: 'Postgres Docker Container Setup'
 excerpt: 'A short guide to running a Postgres database inside a Docker container.'
 date: '2024-04-26T10:17'
 categories: ['dev']
