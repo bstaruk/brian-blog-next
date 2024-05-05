@@ -3,6 +3,7 @@
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import { useDebounceCallback } from 'usehooks-ts';
 import { postCategories } from '@/lib/api/postCategories';
+import TextInput from '@/components/atoms/TextInput';
 
 type PostSearchFormProps = {
   placeholder?: string;
@@ -53,22 +54,16 @@ const PostSearchForm = ({
         e.preventDefault();
       }}
     >
-      <div>
-        <label htmlFor="search" className="sr-only">
-          Search
-        </label>
-
-        <input
-          className="text--body block w-full rounded border bg-eggplant-400 text-eggshell-400 border-eggplant-200 py-2 px-4 placeholder:text-eggshell-400/50 focus:ring-transparent focus:border-eggshell-600"
-          placeholder={placeholder}
-          onChange={(e) => {
-            onQueryChange(e.target.value);
-          }}
-          defaultValue={queryValue}
-          key={queryValue}
-          id="search"
-        />
-      </div>
+      <TextInput
+        placeholder={placeholder}
+        onChange={(e) => {
+          onQueryChange(e.target.value);
+        }}
+        defaultValue={queryValue}
+        key={queryValue}
+        id="search"
+        label="Search Term"
+      />
 
       <div>
         <label htmlFor="category" className="sr-only">
