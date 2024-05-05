@@ -1,12 +1,12 @@
 import { FC, InputHTMLAttributes } from 'react';
 import classNames from 'classnames';
 
-type TextInputProps = InputHTMLAttributes<HTMLInputElement> & {
+type TextFieldProps = InputHTMLAttributes<HTMLInputElement> & {
   className?: string;
   label: string;
 };
 
-const TextInput: FC<TextInputProps> = ({
+const TextField: FC<TextFieldProps> = ({
   className,
   label,
   type = 'text',
@@ -20,4 +20,4 @@ const TextInput: FC<TextInputProps> = ({
   );
 };
 
-export default TextInput;
+export default TextField;
