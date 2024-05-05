@@ -50,7 +50,7 @@ const PostSearchForm = ({
 
   return (
     <form
-      className="flex flex-col md:flex-row gap-4"
+      className="flex flex-col md:flex-row md:items-end gap-4"
       onSubmit={(e) => {
         e.preventDefault();
       }}
@@ -91,7 +91,7 @@ const PostSearchForm = ({
       <button
         type="button"
         onClick={handleClearFilters}
-        className="text--body link--default py-2 px-4 rounded border border-transparent focus:outline focus:outline-1 focus:outline-eggplant-700 focus:border-eggplant-700"
+        className="text--body link--default text-left py-2 px-4 rounded border border-transparent focus:outline focus:outline-none focus:outline-transparent focus:border-eggshell-700"
       >
         Clear Filters
       </button>
