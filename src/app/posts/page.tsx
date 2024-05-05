@@ -22,7 +22,7 @@ export default async function Posts({
       <PostSearchForm />
 
       {!allPosts?.length && (
-        <Text variant="h3">No results found for &ldquo;{query}&rdquo;</Text>
+        <Text>No results found for &ldquo;{query}&rdquo;</Text>
       )}
 
       {allPosts.map((post, postIndex) => (
