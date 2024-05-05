@@ -3,6 +3,7 @@ import { getAllPosts } from '@/lib/api';
 import PostSearchResult from '@/components/molecules/PostSearchResult';
 import PostSearchForm from '@/components/molecules/PostSearchForm';
 import Page from '@/components/organisms/Page';
+import Text from '@/components/atoms/Text';
 
 export default async function Posts({
   searchParams,
@@ -19,6 +20,10 @@ export default async function Posts({
   return (
     <Page title="Brian's Dev Blog" className="flex flex-col gap-8">
       <PostSearchForm />
+
+      {!allPosts?.length && (
+        <Text>No results found for &ldquo;{query}&rdquo;</Text>
+      )}
 
       {allPosts.map((post, postIndex) => (
         <PostSearchResult key={postIndex} {...{ post }} />

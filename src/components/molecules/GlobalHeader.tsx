@@ -30,7 +30,7 @@ const GlobalHeader = ({ title }: GlobalHeaderProps): JSX.Element => {
 
   return (
     <Wrapper className="flex flex-col gap-3 mb-6" tagName="header">
-      <h1 className="text--h1">{title}</h1>
+      <h1 className="text--h1 text-teal-200">{title}</h1>
 
       <ul className="flex items-center gap-6">
         {menuLinks.map((link, linkIndex) => (
