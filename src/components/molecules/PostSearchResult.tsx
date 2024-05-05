@@ -41,7 +41,7 @@ const PostSearchResult = ({
       </Text>
 
       <Text
-        className="font-light text-gray-500 mb-2"
+        className="font-light text-eggshell-600 mb-2"
         tagName="div"
         variant="sm"
       >

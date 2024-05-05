@@ -59,7 +59,7 @@ const PostSearchForm = ({
         </label>
 
         <input
-          className="text--body block w-full rounded border bg-eggshell-400 text-eggplant-700 border-eggplant-200 py-2 px-4 placeholder:text-eggplant-200 focus:ring-eggplant-700 focus:border-eggplant-700"
+          className="text--body block w-full rounded border bg-eggplant-400 text-eggshell-400 border-eggplant-200 py-2 px-4 placeholder:text-eggshell-400/50 focus:ring-transparent focus:border-eggshell-600"
           placeholder={placeholder}
           onChange={(e) => {
             onQueryChange(e.target.value);
@@ -76,7 +76,7 @@ const PostSearchForm = ({
         </label>
 
         <select
-          className="text--body block w-full rounded border bg-eggshell-400 text-eggplant-700 border-eggplant-200 py-2 pl-4 pr-10 placeholder:text-eggplant-200 focus:ring-eggplant-700 focus:border-eggplant-700"
+          className="text--body block w-full rounded border bg-eggplant-400 text-eggshell-400 border-eggplant-200 py-2 px-4 pr-10 placeholder:text-eggshell-400/50 focus:ring-transparent focus:border-eggshell-600"
           id="category"
           onChange={(e) => {
             onCategoryChange(e.target.value);
