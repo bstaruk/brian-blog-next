@@ -1,5 +1,5 @@
 /* Dependency Imports */
-@import 'highlight.js/styles/default.css';
+@import 'highlight.js/styles/dark.css';
 
 /* Ordered Imports */
 @import './tailwind.css';
