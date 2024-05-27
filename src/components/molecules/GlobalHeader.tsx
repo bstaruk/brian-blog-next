@@ -40,7 +40,7 @@ const GlobalHeader = ({ title }: GlobalHeaderProps): JSX.Element => {
         {menuLinks.map((link, linkIndex) => (
           <Text key={linkIndex} tagName="li">
             {pathname === link.href ? (
-              <strong>{link.title}</strong>
+              <span className="font-normal">{link.title}</span>
             ) : (
               <Link href={link.href}>{link.title}</Link>
             )}
