@@ -3,10 +3,14 @@ import { PostCategories } from '@/interfaces/post';
 export const postCategories: PostCategories = {
   dev: {
     description: 'Notes about code.',
-    title: 'Dev Notes',
+    title: 'Dev',
   },
   general: {
     description: 'Notes about things.',
-    title: 'General Notes',
+    title: 'General',
+  },
+  linux: {
+    description: 'Notes about Linux.',
+    title: 'Linux',
   },
 };

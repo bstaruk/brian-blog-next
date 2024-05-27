@@ -2,7 +2,7 @@
 title: 'Rsync Examples'
 excerpt: 'A few examples of how I use rsync to copy files between hosts and drives.'
 date: '2024-05-27T16:40'
-categories: ['dev']
+categories: ['dev', 'linux']
 ---
 
 A few examples of how I use [rsync](https://rsync.samba.org) to copy files between hosts and drives.

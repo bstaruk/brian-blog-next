@@ -2,7 +2,7 @@
 title: 'Linux Web Server Setup'
 excerpt: 'An overview of the first things I do when I spin up a fresh Debian VPS.'
 date: '2024-05-27T17:20'
-categories: ['dev']
+categories: ['dev', 'linux']
 ---
 
 Some basic setup commands & configs that I use for new Debian web servers.
