@@ -95,6 +95,7 @@ sudo nano /etc/fail2ban/jail.conf
 ```bash
 sudo nano /etc/fail2ban/jail.local
 ```
+
 ```bash
 [DEFAULT]
 bantime = 3600
@@ -149,6 +150,7 @@ sudo certbot certonly --nginx -d domain.com -d www.domain.com
 ```bash
 sudo crontab -e
 ```
+
 ```bash
 10 3 * * * /usr/bin/certbot renew --quiet
 ```
@@ -198,7 +200,8 @@ nvm use 6.9.4
 `eval "$(ssh-agent -s)"`
 
 `~/.ssh/config`:
-```
+
+```bash
 Host github.com
   User git
   Hostname github.com
