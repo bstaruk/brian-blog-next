@@ -2,7 +2,7 @@
   .link {
     /* Variant: default */
     &--default {
-      @apply font-medium text-red-500 hover:underline;
+      @apply font-medium text-red-500 hover:underline focus:text-stone-200 focus:underline;
     }
   }
 }
