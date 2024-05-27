@@ -18,7 +18,7 @@ export default async function PostDetails({ params }: Params) {
 
   return (
     <Page title={post.title} className="flex flex-col gap-4">
-      <Text className="font-light text-eggshell-600" tagName="div" variant="sm">
+      <Text className="font-light text-stone-400" tagName="div" variant="sm">
         Posted <DateTime dateTime={post.date} />
       </Text>
 

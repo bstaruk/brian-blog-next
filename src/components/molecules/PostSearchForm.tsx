@@ -91,7 +91,7 @@ const PostSearchForm = ({
       <button
         type="button"
         onClick={handleClearFilters}
-        className="text--body link--default text-left py-2 px-4 rounded border border-transparent focus:outline focus:outline-none focus:outline-transparent focus:border-eggshell-700"
+        className="text--body link--default text-left py-2 px-4 rounded border border-transparent focus:outline focus:outline-0 focus:border-stone-400"
       >
         Clear Filters
       </button>

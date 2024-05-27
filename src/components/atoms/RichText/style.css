@@ -34,20 +34,13 @@
 
     h1,
     h2,
-    h3 {
-      @apply text-teal-200;
+    h3,
+    h4,
+    h5 {
+      @apply text-stone-100 font-semibold;
 
       &:not(:first-child) {
         @apply mt-8;
-      }
-    }
-
-    h4,
-    h5 {
-      @apply text-rose-200;
-
-      &:not(:first-child) {
-        @apply mt-6;
       }
     }
 
@@ -100,7 +93,7 @@
     }
 
     blockquote {
-      @apply border-l-8 border-eggplant-300 bg-eggplant-600 p-5 flex flex-col gap-2;
+      @apply border-l-8 border-stone-400 bg-zinc-800 p-5 flex flex-col gap-2;
 
       &:not(:first-child) {
         @apply mt-8;

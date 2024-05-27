@@ -41,7 +41,7 @@ const PostSearchResult = ({
       </Text>
 
       <Text
-        className="font-light text-eggshell-600 mb-2"
+        className="text-stone-400 mb-2"
         tagName="div"
         variant="sm"
       >
@@ -52,7 +52,7 @@ const PostSearchResult = ({
 
       {!!post.categories?.length && (
         <ul className="flex items-center flex-wrap gap-1 mt-1.5">
-          <Text tagName="li" variant="sm">
+          <Text tagName="li" variant="sm" className="text-stone-400">
             Tags:
           </Text>
 
@@ -61,7 +61,7 @@ const PostSearchResult = ({
               <button
                 type="button"
                 onClick={() => onCategoryClick(cat)}
-                className="link--default p-1 rounded border border-transparent focus:outline focus:outline-1 focus:outline-eggplant-700 focus:border-eggplant-700"
+                className="link--default p-1 rounded border border-transparent focus:outline focus:outline-0 focus:border-stone-400"
               >
                 {postCategories[cat].title}
               </button>

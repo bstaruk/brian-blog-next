@@ -1,18 +1,12 @@
 import type { Metadata } from 'next';
 import classNames from 'classnames';
-import { Lato, Merriweather } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 import '@/styles/app.css';
 
-const lato = Lato({
+const poppins = Poppins({
   subsets: ['latin'],
-  variable: '--font-lato',
-  weight: ['300', '400', '700'],
-});
-
-const merriweather = Merriweather({
-  subsets: ['latin'],
-  variable: '--font-merriweather',
-  weight: ['400', '700'],
+  variable: '--font-poppins',
+  weight: ['300', '500', '600'],
 });
 
 export const metadata: Metadata = {
@@ -27,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={classNames(lato.variable, merriweather.variable)}>
+      <body className={classNames(poppins.variable)}>
         {children}
       </body>
     </html>

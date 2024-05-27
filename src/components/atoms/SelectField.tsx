@@ -20,7 +20,7 @@ const TextField: FC<TextFieldProps> = ({
     <label className={classNames('flex flex-col gap-2', className)}>
       <span className="text--sm block">{label}</span>
       <select
-          className="text--body block w-full rounded border bg-eggplant-400 text-eggshell-400 border-eggplant-200 py-2 px-4 pr-10 placeholder:text-eggshell-400/50 focus:ring-transparent focus:border-eggshell-600"
+          className="text--body block w-full rounded border bg-zinc-700 text-stone-200 border-zinc-700 py-2 px-4 pr-10 placeholder:text-zinc-500 focus:ring-transparent focus:border-zinc-400"
           {...props}
         >
           {options.map(({ label, value}, catIndex) => (
