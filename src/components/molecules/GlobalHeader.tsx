@@ -23,6 +23,10 @@ const menuLinks: MenuLinkFields[] = [
     href: '/posts',
     title: 'Posts',
   },
+  {
+    href: '/contact',
+    title: 'Contact',
+  },
 ];
 
 const GlobalHeader = ({ title }: GlobalHeaderProps): JSX.Element => {

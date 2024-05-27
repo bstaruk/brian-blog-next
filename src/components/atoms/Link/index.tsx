@@ -7,6 +7,7 @@ type LinkProps = {
   className?: string;
   content?: string;
   href: string;
+  tabIndex?: number;
   target?: string;
   variant?: 'default';
 };
@@ -20,6 +21,7 @@ const Link = ({
   className,
   content,
   href,
+  tabIndex,
   target,
   variant = 'default',
 }: LinkProps): JSX.Element | null => {
@@ -28,7 +30,7 @@ const Link = ({
   return (
     <NextLink
       className={classNames(variantClasses[variant], className)}
-      {...{ href, target }}
+      {...{ href, tabIndex, target }}
     >
       {content ?? children}
     </NextLink>

@@ -108,7 +108,7 @@ const PostSearchForm = ({
 
         <button
           type="submit"
-          className="text--body font-semibold text-center py-2 px-4 rounded border border-transparent focus:outline focus:outline-0 bg-red-600 text-stone-900 focus:bg-red-500 hover:bg-red-500"
+          className="text--body font-semibold text-center py-2 px-4 rounded border border-transparent focus:outline focus:outline-0 bg-red-500 text-stone-900 focus:underline hover:underline"
         >
           Search Posts
         </button>

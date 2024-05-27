@@ -18,7 +18,7 @@ export default async function Posts({
   const allPosts = getAllPosts({ category, query });
 
   return (
-    <Page title="Brian's Dev Blog" className="flex flex-col gap-8">
+    <Page title="My Dev Blog" className="flex flex-col gap-8">
       <PostSearchForm />
 
       {!allPosts?.length && (

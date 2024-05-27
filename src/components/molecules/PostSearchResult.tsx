@@ -61,7 +61,7 @@ const PostSearchResult = ({
               <button
                 type="button"
                 onClick={() => onCategoryClick(cat)}
-                className="link--default p-1 rounded border border-transparent focus:outline focus:outline-0 focus:border-stone-400"
+                className="link--default focus:outline focus:outline-0 focus:text-stone-200 focus:underline"
               >
                 {postCategories[cat].title}
               </button>
