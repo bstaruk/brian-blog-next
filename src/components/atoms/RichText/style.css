@@ -93,7 +93,7 @@
     }
 
     blockquote {
-      @apply border-l-8 border-eggplant-300 bg-eggplant-600 p-5 flex flex-col gap-2;
+      @apply border-l-8 border-stone-400 bg-zinc-800 p-5 flex flex-col gap-2;
 
       &:not(:first-child) {
         @apply mt-8;
