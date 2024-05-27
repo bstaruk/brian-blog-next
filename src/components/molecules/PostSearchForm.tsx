@@ -28,7 +28,6 @@ const PostSearchForm = ({
   } = useForm<FormInputs>();
 
   const onSubmit: SubmitHandler<FormInputs> = (data) => {
-    console.log(data);
     const params = new URLSearchParams(searchParams);
 
     if (data.query) {
