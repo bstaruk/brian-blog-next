@@ -52,7 +52,7 @@ const PostSearchForm = ({
     });
 
     replace(pathname);
-  }
+  };
 
   const queryValue = searchParams.get('query')?.toString();
   const categoryValue = searchParams.get('category')?.toString();
@@ -62,7 +62,7 @@ const PostSearchForm = ({
       className="flex flex-col md:flex-row md:items-end gap-4"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <label className="flex flex-col gap-2">
+      <label className="flex-shrink flex flex-col gap-2">
         <span className="text--sm block">Search Term</span>
         <input
           className="text--body block w-full rounded border bg-zinc-700 text-stone-200 border-zinc-700 py-2 px-4 pr-10 placeholder:text-zinc-500 focus:ring-transparent focus:border-zinc-400"
@@ -73,7 +73,7 @@ const PostSearchForm = ({
         />
       </label>
 
-      <label className="flex flex-col gap-2">
+      <label className="flex-shrink-0 flex flex-col gap-2">
         <span className="text--sm block">Category</span>
         <select
           className="text--body block w-full rounded border bg-zinc-700 text-stone-200 border-zinc-700 py-2 px-4 pr-10 placeholder:text-zinc-500 focus:ring-transparent focus:border-zinc-400"
@@ -97,21 +97,21 @@ const PostSearchForm = ({
       </label>
 
       {/* submit & clear */}
-      <aside className="flex flex-col gap-2">
-      <button
-        type="button"
-        className="text--sm link--default text-center focus:outline focus:outline-0 focus:text-stone-200 focus:underline"
-        onClick={() => clearFormValues()}
-      >
-        Clear Filters
-      </button>
+      <aside className="flex-shrink-0 flex flex-col-reverse md:flex-col gap-2">
+        <button
+          type="button"
+          className="text--sm link--default text-center focus:outline focus:outline-0 focus:text-stone-200 focus:underline"
+          onClick={() => clearFormValues()}
+        >
+          Clear Filters
+        </button>
 
-      <button
-        type="submit"
-        className="text--body font-semibold text-center py-2 px-4 rounded border border-transparent focus:outline focus:outline-0 bg-red-600 text-stone-900 focus:bg-red-500 hover:bg-red-500"
-      >
-        Search Posts
-      </button>
+        <button
+          type="submit"
+          className="text--body font-semibold text-center py-2 px-4 rounded border border-transparent focus:outline focus:outline-0 bg-red-600 text-stone-900 focus:bg-red-500 hover:bg-red-500"
+        >
+          Search Posts
+        </button>
       </aside>
     </form>
   );
