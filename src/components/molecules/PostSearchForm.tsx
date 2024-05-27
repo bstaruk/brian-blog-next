@@ -1,13 +1,16 @@
 'use client';
 
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
-import { useDebounceCallback } from 'usehooks-ts';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import { postCategories } from '@/lib/api/postCategories';
-import SelectField from '@/components/atoms/SelectField';
-import TextField from '@/components/atoms/TextField';
 
 type PostSearchFormProps = {
   placeholder?: string;
+};
+
+type FormInputs = {
+  query: string;
+  category: string;
 };
 
 const PostSearchForm = ({
@@ -16,24 +19,26 @@ const PostSearchForm = ({
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    watch,
+    formState: { errors },
+  } = useForm<FormInputs>();
 
-  const onQueryChange = useDebounceCallback((term: string) => {
+  const onSubmit: SubmitHandler<FormInputs> = (data) => {
+    console.log(data);
     const params = new URLSearchParams(searchParams);
 
-    if (term) {
-      params.set('query', term);
+    if (data.query) {
+      params.set('query', data.query);
     } else {
       params.delete('query');
     }
 
-    replace(`${pathname}?${params.toString()}`);
-  }, 300);
-
-  const onCategoryChange = (category: string) => {
-    const params = new URLSearchParams(searchParams);
-
-    if (category) {
-      params.set('category', category);
+    if (data.category) {
+      params.set('category', data.category);
     } else {
       params.delete('category');
     }
@@ -41,9 +46,14 @@ const PostSearchForm = ({
     replace(`${pathname}?${params.toString()}`);
   };
 
-  const handleClearFilters = () => {
+  const clearFormValues = () => {
+    reset({
+      query: '',
+      category: '',
+    });
+
     replace(pathname);
-  };
+  }
 
   const queryValue = searchParams.get('query')?.toString();
   const categoryValue = searchParams.get('category')?.toString();
@@ -51,50 +61,59 @@ const PostSearchForm = ({
   return (
     <form
       className="flex flex-col md:flex-row md:items-end gap-4"
-      onSubmit={(e) => {
-        e.preventDefault();
-      }}
+      onSubmit={handleSubmit(onSubmit)}
     >
-      <TextField
-        placeholder={placeholder}
-        onChange={(e) => {
-          onQueryChange(e.target.value);
-        }}
-        defaultValue={queryValue}
-        key={queryValue}
-        id="search"
-        label="Search Term"
-      />
+      <label className="flex flex-col gap-2">
+        <span className="text--sm block">Search Term</span>
+        <input
+          className="text--body block w-full rounded border bg-zinc-700 text-stone-200 border-zinc-700 py-2 px-4 pr-10 placeholder:text-zinc-500 focus:ring-transparent focus:border-zinc-400"
+          type="text"
+          defaultValue={queryValue}
+          {...register('query')}
+          {...{ placeholder }}
+        />
+      </label>
 
-      <SelectField
-        id="category"
-        onChange={(e) => {
-          onCategoryChange(e.target.value);
-        }}
-        defaultValue={categoryValue}
-        key={categoryValue}
-        label="Category"
-        options={[
-          {
-            label: 'All Categories',
-            value: '',
-          },
-          ...Object.entries(postCategories).map(
-            ([key, value], catIndex) => ({
+      <label className="flex flex-col gap-2">
+        <span className="text--sm block">Category</span>
+        <select
+          className="text--body block w-full rounded border bg-zinc-700 text-stone-200 border-zinc-700 py-2 px-4 pr-10 placeholder:text-zinc-500 focus:ring-transparent focus:border-zinc-400"
+          {...register('category')}
+        >
+          {[
+            {
+              label: 'All Categories',
+              value: '',
+            },
+            ...Object.entries(postCategories).map(([key, value], catIndex) => ({
               label: value.title,
               value: key,
-            }),
-          )
-        ]}
-      />
+            })),
+          ].map(({ label, value }, catIndex) => (
+            <option value={value} key={catIndex}>
+              {label}
+            </option>
+          ))}
+        </select>
+      </label>
 
+      {/* submit & clear */}
+      <aside className="flex flex-col gap-2">
       <button
         type="button"
-        onClick={handleClearFilters}
-        className="text--body link--default text-left py-2 px-4 rounded border border-transparent focus:outline focus:outline-0 focus:border-stone-400"
+        className="text--sm link--default text-center focus:outline focus:outline-0 focus:text-stone-200 focus:underline"
+        onClick={() => clearFormValues()}
       >
         Clear Filters
       </button>
+
+      <button
+        type="submit"
+        className="text--body font-semibold text-center py-2 px-4 rounded border border-transparent focus:outline focus:outline-0 bg-red-600 text-stone-900 focus:bg-red-500 hover:bg-red-500"
+      >
+        Search Posts
+      </button>
+      </aside>
     </form>
   );
 };
