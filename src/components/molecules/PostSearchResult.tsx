@@ -41,7 +41,7 @@ const PostSearchResult = ({
       </Text>
 
       <Text
-        className="font-light text-eggshell-600 mb-2"
+        className="text-stone-400 mb-2"
         tagName="div"
         variant="sm"
       >
@@ -52,7 +52,7 @@ const PostSearchResult = ({
 
       {!!post.categories?.length && (
         <ul className="flex items-center flex-wrap gap-1 mt-1.5">
-          <Text tagName="li" variant="sm">
+          <Text tagName="li" variant="sm" className="text-stone-400">
             Tags:
           </Text>
 

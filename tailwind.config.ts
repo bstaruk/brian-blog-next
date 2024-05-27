@@ -27,8 +27,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-lato), sans'],
-        serif: ['var(--font-merriweather), sans-serif'],
+        sans: ['var(--font-poppins), sans'],
       },
       listStyleType: {
         circle: 'circle',
