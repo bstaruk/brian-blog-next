@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { postCategories } from '@/lib/api/postCategories';
@@ -17,15 +18,25 @@ const PostSearchForm = ({
   placeholder = 'Search...',
 }: PostSearchFormProps): JSX.Element => {
   const searchParams = useSearchParams();
+  const queryValue = searchParams.get('query')?.toString();
+  const categoryValue = searchParams.get('category')?.toString();
   const pathname = usePathname();
   const { replace } = useRouter();
   const {
+    getValues,
     register,
     handleSubmit,
     reset,
-    watch,
+    setValue,
     formState: { errors },
   } = useForm<FormInputs>();
+
+  useEffect(() => {
+    const formValue = getValues('category');
+    if (formValue !== categoryValue) {
+      setValue('category', categoryValue ?? '');
+    }
+  }, [categoryValue, getValues, setValue]);
 
   const onSubmit: SubmitHandler<FormInputs> = (data) => {
     const params = new URLSearchParams(searchParams);
@@ -53,9 +64,6 @@ const PostSearchForm = ({
 
     replace(pathname);
   };
-
-  const queryValue = searchParams.get('query')?.toString();
-  const categoryValue = searchParams.get('category')?.toString();
 
   return (
     <form

@@ -103,5 +103,17 @@
         @apply mb-8;
       }
     }
+
+    hr {
+      @apply h-[1px] bg-stone-400 border-none;
+
+      &:not(:first-child) {
+        @apply mt-12;
+      }
+
+      &:not(:last-child) {
+        @apply mb-12;
+      }
+    }
   }
 }
