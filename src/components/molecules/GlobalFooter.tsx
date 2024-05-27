@@ -5,7 +5,7 @@ import Wrapper from '@/components/atoms/Wrapper';
 const GlobalFooter = (): JSX.Element => {
   return (
     <Wrapper
-      className="flex flex-col gap-3 mt-6 pt-6 border-t border-eggshell-400/10"
+      className="flex flex-col gap-3 mt-6 pt-6 border-t border-stone-700"
       tagName="footer"
     >
       <Text>
